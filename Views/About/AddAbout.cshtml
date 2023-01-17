@@ -1,0 +1,22 @@
+﻿@model IPortfolioProjects161022.Models.Entities.TblAbout
+@{
+    ViewBag.Title = "AddAbout";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+
+<form method="post">
+    <label>Ad Soyad</label>
+    @Html.TextBoxFor(x => x.FullName, new { @class = "form-control" })
+    <br />
+    <label>Başlık</label>
+    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+    <br />
+    <label>Açıklama</label>
+    @Html.TextBoxFor(x => x.Decription, new { @class = "form-control" })
+    <br />
+    <label>Resim URL</label>
+    @Html.TextBoxFor(x => x.ImageUrl, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-primary">Kaydet</button>
+</form>
+
