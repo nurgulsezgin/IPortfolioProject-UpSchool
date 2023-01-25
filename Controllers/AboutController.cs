@@ -12,6 +12,7 @@ namespace IPortfolioProjects161022.Controllers
     {
         // GET: About
         UPSchoolDbPortfolioEntities db = new UPSchoolDbPortfolioEntities();
+        [HttpGet]
         public ActionResult Index()
         {
             var values = db.TblAbouts.ToList();

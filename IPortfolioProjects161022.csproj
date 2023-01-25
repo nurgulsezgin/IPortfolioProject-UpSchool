@@ -52,6 +52,9 @@
       <HintPath>..\DemoUpSchool\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -107,9 +110,6 @@
       <Private>True</Private>
       <HintPath>..\DemoUpSchool\packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\DemoUpSchool\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="WebGrease">
       <Private>True</Private>
       <HintPath>..\DemoUpSchool\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
@@ -134,12 +134,14 @@
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MemberController.cs" />
     <Compile Include="Controllers\MessageController.cs" />
+    <Compile Include="Controllers\RegisterController.cs" />
     <Compile Include="Controllers\ServicesController.cs" />
     <Compile Include="Controllers\StatisticController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="HashSHA256.cs" />
     <Compile Include="Models\Entities\Model1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -217,45 +219,6 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Templates\iportfolio-starter\assets\css\style-starter.css" />
-    <Content Include="Templates\iportfolio-starter\assets\fonts\fontawesome-webfont.svg" />
-    <Content Include="Templates\iportfolio-starter\assets\images\about.jpg" />
-    <Content Include="Templates\iportfolio-starter\assets\images\award.png" />
-    <Content Include="Templates\iportfolio-starter\assets\images\award1.png" />
-    <Content Include="Templates\iportfolio-starter\assets\images\award2.png" />
-    <Content Include="Templates\iportfolio-starter\assets\images\awards.png" />
-    <Content Include="Templates\iportfolio-starter\assets\images\banner.png" />
-    <Content Include="Templates\iportfolio-starter\assets\images\client1.png" />
-    <Content Include="Templates\iportfolio-starter\assets\images\client2.png" />
-    <Content Include="Templates\iportfolio-starter\assets\images\client3.png" />
-    <Content Include="Templates\iportfolio-starter\assets\images\client4.png" />
-    <Content Include="Templates\iportfolio-starter\assets\images\client5.png" />
-    <Content Include="Templates\iportfolio-starter\assets\images\client6.png" />
-    <Content Include="Templates\iportfolio-starter\assets\images\clients.png" />
-    <Content Include="Templates\iportfolio-starter\assets\images\file.png" />
-    <Content Include="Templates\iportfolio-starter\assets\images\file1.png" />
-    <Content Include="Templates\iportfolio-starter\assets\images\file2.png" />
-    <Content Include="Templates\iportfolio-starter\assets\images\skills.png" />
-    <Content Include="Templates\iportfolio-starter\assets\images\team1.jpg" />
-    <Content Include="Templates\iportfolio-starter\assets\images\team2.jpg" />
-    <Content Include="Templates\iportfolio-starter\assets\images\team3.jpg" />
-    <Content Include="Templates\iportfolio-starter\assets\images\team4.jpg" />
-    <Content Include="Templates\iportfolio-starter\assets\images\template1.jpg" />
-    <Content Include="Templates\iportfolio-starter\assets\images\template2.jpg" />
-    <Content Include="Templates\iportfolio-starter\assets\images\template3.jpg" />
-    <Content Include="Templates\iportfolio-starter\assets\images\template4.jpg" />
-    <Content Include="Templates\iportfolio-starter\assets\images\template5.jpg" />
-    <Content Include="Templates\iportfolio-starter\assets\images\template6.jpg" />
-    <Content Include="Templates\iportfolio-starter\assets\images\template7.jpg" />
-    <Content Include="Templates\iportfolio-starter\assets\images\template8.jpg" />
-    <Content Include="Templates\iportfolio-starter\assets\js\bootstrap.min.js" />
-    <Content Include="Templates\iportfolio-starter\assets\js\jquery-3.3.1.min.js" />
-    <Content Include="Templates\iportfolio-starter\assets\js\owl.carousel.js" />
-    <Content Include="Templates\iportfolio-starter\assets\js\theme-change.js" />
-    <Content Include="Templates\iportfolio-starter\contact.html" />
-    <Content Include="Templates\iportfolio-starter\index.html" />
-    <Content Include="Templates\iportfolio-starter\portfolio.html" />
-    <Content Include="Templates\iportfolio-starter\starter-license-W3Layouts.txt" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -278,11 +241,6 @@
     <Content Include="Views\About\AddAbout.cshtml" />
     <Content Include="Views\About\UpdateAbout.cshtml" />
     <Content Include="Views\Statistic\Index.cshtml" />
-    <Content Include="Templates\iportfolio-starter\assets\fonts\fontawesome-webfont.eot" />
-    <Content Include="Templates\iportfolio-starter\assets\fonts\fontawesome-webfont.ttf" />
-    <Content Include="Templates\iportfolio-starter\assets\fonts\fontawesome-webfont.woff" />
-    <Content Include="Templates\iportfolio-starter\assets\fonts\fontawesome-webfont.woff2" />
-    <Content Include="Templates\iportfolio-starter\assets\fonts\FontAwesome.otf" />
     <Content Include="Views\User\Index.cshtml" />
     <Content Include="Views\User\HeadPartial.cshtml" />
     <Content Include="Views\User\HeaderPartial.cshtml" />
@@ -294,6 +252,7 @@
     <Content Include="Views\Message\OutBox.cshtml" />
     <Content Include="Views\Error\Page404.cshtml" />
     <Content Include="Views\Message\SendMessage.cshtml" />
+    <Content Include="Views\Register\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

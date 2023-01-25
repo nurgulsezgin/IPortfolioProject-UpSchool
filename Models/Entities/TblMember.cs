@@ -11,13 +11,31 @@ namespace IPortfolioProjects161022.Models.Entities
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class TblMember
     {
         public int MemberID { get; set; }
+
+        [Required(ErrorMessage = "Lütfen bir isim giriniz")]
+        [StringLength(50, ErrorMessage = "{0}iniz, en az {2} ve en fazla {1} karakter uzunluðunda olmalýdýr.", MinimumLength =2)]
+        [Display(Name = "Ýsim")]
         public string MemberName { get; set; }
+
+        [Required(ErrorMessage = "Lütfen soyadýnýzý giriniz")]
+        [StringLength(50)]
+        [Display(Name = "Soyad")]
         public string MemberSurname { get; set; }
+
+        [Required(ErrorMessage = "Lütfen mailinizi giriniz")]
+        [EmailAddress(ErrorMessage = "Lütfen geçerli bir mail adresi giriniz")]
+        [Display(Name = "E-Posta")]
         public string MemberMail { get; set; }
+
+        [Required(ErrorMessage = "Lütfen bir þifre giriniz")]
+        [StringLength(64, ErrorMessage = "{0}niz, en az {2} ve en fazla {1} karakter uzunluðunda olmalýdýr.", MinimumLength = 6)]
+        [DataType(DataType.Password)]
+        [Display(Name = "Þifre")]
         public string MemberPassword { get; set; }
     }
 }

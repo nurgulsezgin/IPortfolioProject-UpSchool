@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
@@ -12,6 +15,7 @@ namespace IPortfolioProjects161022.Controllers
     public class LoginController : Controller
     {
         UPSchoolDbPortfolioEntities db = new UPSchoolDbPortfolioEntities();
+
         // GET: Login
         [HttpGet]
         public ActionResult Index()
@@ -21,7 +25,8 @@ namespace IPortfolioProjects161022.Controllers
         [HttpPost]
         public ActionResult Index(TblMember p)
         {
-            var values = db.TblMembers.FirstOrDefault(x => x.MemberMail == p.MemberMail && x.MemberPassword == p.MemberPassword);//tek bir değer getiri
+            var pass = HashSHA256.EncryptPassword(p.MemberPassword);
+            var values = db.TblMembers.FirstOrDefault(x => x.MemberMail == p.MemberMail && x.MemberPassword == pass);//tek bir değer getirir
             if (values != null)
             {
                 bool rememberMe = false;
